@@ -1,8 +1,11 @@
-﻿internal class Program
+﻿using StudentDataBaseManagement.Model;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
         int choice = 0;
+        Student student;
         Console.WriteLine("***** Welcome To Student Database Management System *****");
         do
         {
@@ -13,7 +16,13 @@
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine("1");
+                    Console.WriteLine("Enter student roll no :");
+                    var roll = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Enter student name :");
+                    var name = Console.ReadLine();
+
+                    student= new Student(roll, name);
                     break;
 
                 case 2:
