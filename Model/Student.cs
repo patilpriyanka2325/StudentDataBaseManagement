@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace StudentDataBaseManagement.Model
 {
     internal class Student
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public int Rollno { get; set; }
         public string Name { get; set; }
 
