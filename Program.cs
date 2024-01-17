@@ -5,8 +5,18 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        //string connctionString = "mongodb://127.0.0.1:27017";
+        //string databaseName = "simple_db";
+        //string collectionName = "student";
+
+        //var client = new MongoClient(connctionString);
+        //var db = client.GetDatabase(databaseName);
+        //var collection = db.GetCollection<Student>(collectionName);
+
+        //var student = new Student();
+
         int choice = 0;
-        Student student;
+        Student student = new Student();
         Console.WriteLine("***** Welcome To Student Database Management System *****");
         do
         {
@@ -18,12 +28,13 @@ internal class Program
             {
                 case 1:
                     Console.WriteLine("Enter student roll no :");
-                    var roll = Convert.ToInt32(Console.ReadLine());
+                    var roll = Console.ReadLine();
 
                     Console.WriteLine("Enter student name :");
                     var name = Console.ReadLine();
 
-                    student= new Student(roll, name);
+                    var newStudent = student.AddStudent(roll, name);
+                    Console.WriteLine("Student added : {0}\n{1}", student.Rollno, student.Name);
                     break;
 
                 case 2:
